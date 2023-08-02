@@ -1,0 +1,59 @@
+
+<html>
+<head>
+  <title>Customer List Screen</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+  <center>
+    <h1>Customer List</h1>
+    <button id="addCustomerBtn">Add Customer</button>
+    <div id="customerFormContainer" style="display: none;">
+      <form id="customerForm">
+        <div class="form-group-container">
+          <div class="form-group">
+            <input type="text" placeholder="First Name" id="firstName" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Last Name" id="lastName" required>
+          </div>
+        </div>
+        <div class="form-group-container">
+          <div class="form-group">
+            <input type="text" placeholder="Street" id="street" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Address" id="address" required>
+          </div>
+        </div>
+        <div class="form-group-container">
+          <div class="form-group">
+            <input type="text" placeholder="City" id="city" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="State" id="state" required>
+          </div>
+        </div>
+        <div class="form-group-container">
+          <div class="form-group">
+            <input type="email" placeholder="Email" id="email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" pattern="[0-9]+" placeholder="Phone" id="phone" required>
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="customerTableContainer" style="display: none;">
+      <table id="customerTable">
+        <!-- Table headers -->
+        <tbody>
+          <!-- Customer data will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+  </center>
+  <script src="scripts2.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.cancelbtn {
+  background-color: #f44336;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.psw {
+  float: right;
+}
+
+span.psw a {
+  color: #0000FF;
+}
+
+span.psw a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+  </style>
+</head>
+<body>
+  <center>
+    <form method="post" id="loginForm" action="/login">
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+        <br>
+        </br>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <br></br>
+        <button type="submit">Login</button>
+        <button type="button" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  </center>
+
+
+  <script>
+  /*document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const username = document.querySelector('input[name="uname"]').value;
+      const password = document.querySelector('input[name="psw"]').value;
+
+      // Check if the login form is valid (both fields are non-empty)
+      if (username.trim() !== "" && password.trim() !== "") {
+        // Send the form data to the server for processing
+        fetch("/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // If the server returns success (status code 200), redirect to the customer page
+            if (data.success) {
+              localStorage.setItem("isLoggedIn", "true");
+              window.location.href = "http://localhost:3000/Customerpage2.html";
+            } else {
+              // Handle login failure (show an alert, etc.)
+              alert("Login failed. Please check your credentials.");
+            }
+          })
+          .catch((error) => {
+            // Handle any error that occurred during the request
+            console.error("Error during login:", error);
+            alert("An error occurred during login.");
+          });
+      } else {
+        alert("Please enter both username and password");
+      }
+    });
+  });*/
+
+  /*document.addEventListener("DOMContentLoaded", function () {
+      const loginForm = document.getElementById("loginForm");
+
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const username = document.querySelector('input[name="uname"]').value;
+        const password = document.querySelector('input[name="psw"]').value;
+
+        // Check if the login form is valid (both fields are non-empty)
+        if (username.trim() !== "" && password.trim() !== "") {
+          // Send the form data to the server for processing
+          fetch("/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
+          })
+            .then((response) => {
+              // Assuming the server responds with success, redirect to the customer page
+              window.location.href = "http://localhost:3000/Customerpage2.html";
+            })
+            .catch((error) => {
+              // Handle any error that occurred during the request
+              console.error("Error during login:", error);
+              alert("An error occurred during login.");
+            });
+        } else {
+          alert("Please enter both username and password");
+        }
+      });
+    }); */
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const loginForm = document.getElementById("loginForm");
+
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const username = document.querySelector('input[name="uname"]').value;
+        const password = document.querySelector('input[name="psw"]').value;
+
+        // Check if the login form is valid (both fields are non-empty)
+        if (username.trim() !== "" && password.trim() !== "") {
+          // Set the login status in localStorage
+          localStorage.setItem("isLoggedIn", "true");
+          // Redirect the user to the customer page
+          window.location.href = "Customerpage2.html";
+        } else {
+          alert("Please enter both username and password");
+        }
+      });
+    });
+
+
+
+
+</script>
+
+</body>
